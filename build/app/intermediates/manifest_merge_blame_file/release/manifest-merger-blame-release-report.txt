@@ -1,0 +1,199 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.wms_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.CAMERA" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+11-->[:mobile_scanner] /Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-65
+11-->[:mobile_scanner] /Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-62
+12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+13-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:22-76
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+14-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:26:22-64
+15
+16    <application
+17        android:name="android.app.Application"
+17-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:4:9-42
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.6.0] /Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+19        android:icon="@mipmap/ic_launcher"
+19-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:5:9-43
+20        android:label="wms_app" >
+20-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:3:9-32
+21        <activity
+21-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:6:9-26:20
+22            android:name="com.example.wms_app.MainActivity"
+22-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:7:13-41
+23            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+23-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:11:13-163
+24            android:exported="true"
+24-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:8:13-36
+25            android:hardwareAccelerated="true"
+25-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:12:13-47
+26            android:launchMode="singleTop"
+26-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:9:13-43
+27            android:theme="@style/LaunchTheme"
+27-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:10:13-47
+28            android:windowSoftInputMode="adjustResize" >
+28-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:13:13-55
+29
+30            <!--
+31                 Specifies an Android theme to apply to this Activity as soon as
+32                 the Android process has started. This theme is visible to the user
+33                 while the Flutter UI initializes. After that, this theme continues
+34                 to determine the Window background behind the Flutter UI.
+35            -->
+36            <meta-data
+36-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:18:13-21:17
+37                android:name="io.flutter.embedding.android.NormalTheme"
+37-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:19:15-70
+38                android:resource="@style/NormalTheme" />
+38-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:20:15-52
+39
+40            <intent-filter>
+40-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:22:13-25:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:23:17-68
+41-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:23:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:24:17-76
+43-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:24:27-74
+44            </intent-filter>
+45        </activity>
+46        <!--
+47             Don't delete the meta-data below.
+48             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+49        -->
+50        <meta-data
+50-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:29:9-31:33
+51            android:name="flutterEmbedding"
+51-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:30:13-44
+52            android:value="2" />
+52-->/Users/spurge/Desktop/WMS APP/wms_app/android/app/src/main/AndroidManifest.xml:31:13-30
+53
+54        <uses-library
+54-->[androidx.window:window:1.0.0-beta04] /Users/spurge/.gradle/caches/transforms-3/722e9cd2efb783eff5ea3eec215ae737/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+55            android:name="androidx.window.extensions"
+55-->[androidx.window:window:1.0.0-beta04] /Users/spurge/.gradle/caches/transforms-3/722e9cd2efb783eff5ea3eec215ae737/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+56            android:required="false" />
+56-->[androidx.window:window:1.0.0-beta04] /Users/spurge/.gradle/caches/transforms-3/722e9cd2efb783eff5ea3eec215ae737/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+57        <uses-library
+57-->[androidx.window:window:1.0.0-beta04] /Users/spurge/.gradle/caches/transforms-3/722e9cd2efb783eff5ea3eec215ae737/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+58            android:name="androidx.window.sidecar"
+58-->[androidx.window:window:1.0.0-beta04] /Users/spurge/.gradle/caches/transforms-3/722e9cd2efb783eff5ea3eec215ae737/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+59            android:required="false" />
+59-->[androidx.window:window:1.0.0-beta04] /Users/spurge/.gradle/caches/transforms-3/722e9cd2efb783eff5ea3eec215ae737/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+60
+61        <service
+61-->[androidx.camera:camera-camera2:1.2.3] /Users/spurge/.gradle/caches/transforms-3/ef4aef360a5a45303faef5d9de91cfb0/transformed/jetified-camera-camera2-1.2.3/AndroidManifest.xml:24:9-33:19
+62            android:name="androidx.camera.core.impl.MetadataHolderService"
+62-->[androidx.camera:camera-camera2:1.2.3] /Users/spurge/.gradle/caches/transforms-3/ef4aef360a5a45303faef5d9de91cfb0/transformed/jetified-camera-camera2-1.2.3/AndroidManifest.xml:25:13-75
+63            android:enabled="false"
+63-->[androidx.camera:camera-camera2:1.2.3] /Users/spurge/.gradle/caches/transforms-3/ef4aef360a5a45303faef5d9de91cfb0/transformed/jetified-camera-camera2-1.2.3/AndroidManifest.xml:26:13-36
+64            android:exported="false" >
+64-->[androidx.camera:camera-camera2:1.2.3] /Users/spurge/.gradle/caches/transforms-3/ef4aef360a5a45303faef5d9de91cfb0/transformed/jetified-camera-camera2-1.2.3/AndroidManifest.xml:27:13-37
+65            <meta-data
+65-->[androidx.camera:camera-camera2:1.2.3] /Users/spurge/.gradle/caches/transforms-3/ef4aef360a5a45303faef5d9de91cfb0/transformed/jetified-camera-camera2-1.2.3/AndroidManifest.xml:30:13-32:89
+66                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+66-->[androidx.camera:camera-camera2:1.2.3] /Users/spurge/.gradle/caches/transforms-3/ef4aef360a5a45303faef5d9de91cfb0/transformed/jetified-camera-camera2-1.2.3/AndroidManifest.xml:31:17-103
+67                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+67-->[androidx.camera:camera-camera2:1.2.3] /Users/spurge/.gradle/caches/transforms-3/ef4aef360a5a45303faef5d9de91cfb0/transformed/jetified-camera-camera2-1.2.3/AndroidManifest.xml:32:17-86
+68        </service>
+69        <service
+69-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] /Users/spurge/.gradle/caches/transforms-3/f64b7dc43224163ba265e7950ccd6050/transformed/jetified-play-services-mlkit-barcode-scanning-18.2.0/AndroidManifest.xml:9:9-15:19
+70            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+70-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] /Users/spurge/.gradle/caches/transforms-3/f64b7dc43224163ba265e7950ccd6050/transformed/jetified-play-services-mlkit-barcode-scanning-18.2.0/AndroidManifest.xml:10:13-91
+71            android:directBootAware="true"
+71-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:17:13-43
+72            android:exported="false" >
+72-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] /Users/spurge/.gradle/caches/transforms-3/f64b7dc43224163ba265e7950ccd6050/transformed/jetified-play-services-mlkit-barcode-scanning-18.2.0/AndroidManifest.xml:11:13-37
+73            <meta-data
+73-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] /Users/spurge/.gradle/caches/transforms-3/f64b7dc43224163ba265e7950ccd6050/transformed/jetified-play-services-mlkit-barcode-scanning-18.2.0/AndroidManifest.xml:12:13-14:85
+74                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+74-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] /Users/spurge/.gradle/caches/transforms-3/f64b7dc43224163ba265e7950ccd6050/transformed/jetified-play-services-mlkit-barcode-scanning-18.2.0/AndroidManifest.xml:13:17-120
+75                android:value="com.google.firebase.components.ComponentRegistrar" />
+75-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0] /Users/spurge/.gradle/caches/transforms-3/f64b7dc43224163ba265e7950ccd6050/transformed/jetified-play-services-mlkit-barcode-scanning-18.2.0/AndroidManifest.xml:14:17-82
+76            <meta-data
+76-->[com.google.mlkit:vision-common:17.3.0] /Users/spurge/.gradle/caches/transforms-3/8a94246ec57a34278a36d9f8feb0976d/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:12:13-14:85
+77                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+77-->[com.google.mlkit:vision-common:17.3.0] /Users/spurge/.gradle/caches/transforms-3/8a94246ec57a34278a36d9f8feb0976d/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:13:17-124
+78                android:value="com.google.firebase.components.ComponentRegistrar" />
+78-->[com.google.mlkit:vision-common:17.3.0] /Users/spurge/.gradle/caches/transforms-3/8a94246ec57a34278a36d9f8feb0976d/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:14:17-82
+79            <meta-data
+79-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:20:13-22:85
+80                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+80-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:21:17-120
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:22:17-82
+82        </service>
+83
+84        <provider
+84-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:9:9-13:38
+85            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+85-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:10:13-78
+86            android:authorities="com.example.wms_app.mlkitinitprovider"
+86-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:11:13-69
+87            android:exported="false"
+87-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:12:13-37
+88            android:initOrder="99" />
+88-->[com.google.mlkit:common:18.7.0] /Users/spurge/.gradle/caches/transforms-3/2d11a25e290ea47dd196e83c943377ec/transformed/jetified-common-18.7.0/AndroidManifest.xml:13:13-35
+89
+90        <activity
+90-->[com.google.android.gms:play-services-base:18.1.0] /Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+91            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+91-->[com.google.android.gms:play-services-base:18.1.0] /Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+92            android:exported="false"
+92-->[com.google.android.gms:play-services-base:18.1.0] /Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+93-->[com.google.android.gms:play-services-base:18.1.0] /Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+94
+95        <meta-data
+95-->[com.google.android.gms:play-services-basement:18.1.0] /Users/spurge/.gradle/caches/transforms-3/ce1b43ec518913bad5c3d5c6cb7bac46/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+96            android:name="com.google.android.gms.version"
+96-->[com.google.android.gms:play-services-basement:18.1.0] /Users/spurge/.gradle/caches/transforms-3/ce1b43ec518913bad5c3d5c6cb7bac46/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+97            android:value="@integer/google_play_services_version" />
+97-->[com.google.android.gms:play-services-basement:18.1.0] /Users/spurge/.gradle/caches/transforms-3/ce1b43ec518913bad5c3d5c6cb7bac46/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+98
+99        <service
+99-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+100            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+100-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+101            android:exported="false" >
+101-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+102            <meta-data
+102-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+103                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+103-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+104                android:value="cct" />
+104-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/spurge/.gradle/caches/transforms-3/a1c3ad679a2d0023efa07631abb3a760/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+105        </service>
+106        <service
+106-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/spurge/.gradle/caches/transforms-3/f716869ec80edc5d84ff0600634ab105/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+107            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+107-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/spurge/.gradle/caches/transforms-3/f716869ec80edc5d84ff0600634ab105/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+108            android:exported="false"
+108-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/spurge/.gradle/caches/transforms-3/f716869ec80edc5d84ff0600634ab105/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+109            android:permission="android.permission.BIND_JOB_SERVICE" >
+109-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/spurge/.gradle/caches/transforms-3/f716869ec80edc5d84ff0600634ab105/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+110        </service>
+111
+112        <receiver
+112-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/spurge/.gradle/caches/transforms-3/f716869ec80edc5d84ff0600634ab105/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+113            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+113-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/spurge/.gradle/caches/transforms-3/f716869ec80edc5d84ff0600634ab105/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
+114            android:exported="false" />
+114-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/spurge/.gradle/caches/transforms-3/f716869ec80edc5d84ff0600634ab105/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+115    </application>
+116
+117</manifest>

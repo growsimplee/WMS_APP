@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/merged_res/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/merged_res/release/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/merged_res/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/res/color/common_google_signin_btn_text_light.xml"
+    }
+]

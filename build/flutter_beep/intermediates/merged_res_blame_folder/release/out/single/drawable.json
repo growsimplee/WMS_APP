@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/drawable/notification_bg_low.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/drawable/notification_bg.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/drawable/notification_icon_background.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/drawable/notification_icon_background.xml"
+    }
+]

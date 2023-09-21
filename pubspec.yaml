@@ -1,0 +1,73 @@
+name: wms_app
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.3 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  get_it: ^7.2.0
+  shared_preferences: ^2.0.18
+  package_info_plus: ^3.0.3
+  provider: ^6.0.5
+  flutter_svg: ^2.0.2
+  dotted_line: ^3.2.2
+  shimmer: ^3.0.0
+  mobile_scanner: ^3.4.1
+  flutter_beep: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  assets:
+   - assets/images/
+   
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Black.ttf
+        - asset: assets/fonts/poppins/Poppins-BlackItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+        - asset: assets/fonts/poppins/Poppins-BoldItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraBold.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraBoldItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraLight.ttf
+        - asset: assets/fonts/poppins/Poppins-ExtraLightItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Italic.ttf
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+        - asset: assets/fonts/poppins/Poppins-LightItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+        - asset: assets/fonts/poppins/Poppins-MediumItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBoldItalic.ttf
+        - asset: assets/fonts/poppins/Poppins-Thin.ttf
+        - asset: assets/fonts/poppins/Poppins-ThinItalic.ttf
+
+
+ 
+  uses-material-design: true
+
+  

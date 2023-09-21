@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/values-th/values-th.xml",
+            "map": [
+                {
+                    "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/values-th/values-th.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/incremental/mergeReleaseResources/merged.dir/values-th/values-th.xml",
+            "map": [
+                {
+                    "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/values-th/values-th.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

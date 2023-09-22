@@ -254,18 +254,45 @@ class _ItemListState extends State<ItemList> {
                                       picklistprovider.itemList.pendency![index]
                                               .productId ??
                                           0);
-                                  await Navigator.pushNamed(
-                                      context, '/picklist/items/productlist');
-                                  if (mounted) {
-                                    Provider.of<PicklistProvider>(context,
-                                            listen: false)
-                                        .onRefereshProductlist();
-                                    Provider.of<PicklistProvider>(context,
-                                            listen: false)
-                                        .onRefereshItemlist();
-                                    Provider.of<PicklistProvider>(context,
-                                            listen: false)
-                                        .getItemList();
+                                  if (Picklist.getItemListstatus(
+                                              picklistprovider.itemList
+                                                  .pendency![index].pickedQty!
+                                                  .toInt(),
+                                              picklistprovider.itemList
+                                                  .pendency![index].total!
+                                                  .toInt(),
+                                              picklistprovider
+                                                      .itemList
+                                                      .pendency![index]
+                                                      .available ??
+                                                  true)[0] ==
+                                          "Not Picked" ||
+                                      Picklist.getItemListstatus(
+                                              picklistprovider.itemList
+                                                  .pendency![index].pickedQty!
+                                                  .toInt(),
+                                              picklistprovider.itemList
+                                                  .pendency![index].total!
+                                                  .toInt(),
+                                              picklistprovider
+                                                      .itemList
+                                                      .pendency![index]
+                                                      .available ??
+                                                  true)[0] ==
+                                          "Partially Picked") {
+                                    await Navigator.pushNamed(
+                                        context, '/picklist/items/productlist');
+                                    if (mounted) {
+                                      Provider.of<PicklistProvider>(context,
+                                              listen: false)
+                                          .onRefereshProductlist();
+                                      Provider.of<PicklistProvider>(context,
+                                              listen: false)
+                                          .onRefereshItemlist();
+                                      Provider.of<PicklistProvider>(context,
+                                              listen: false)
+                                          .getItemList();
+                                    }
                                   }
                                 },
                                 child: Card(

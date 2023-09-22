@@ -20,6 +20,7 @@ class PicklistProvider extends ChangeNotifier {
   int totalactionItem = 0;
   int? currentProductId;
   int currectSerialNumberofProduct = 1;
+  int? currentBinId;
   Future<ActivePicklist> getActivePicklist(int currentPage) async {
     try {
       activepicklist = await PicklistService().getactivepicklist(1);
@@ -53,7 +54,12 @@ class PicklistProvider extends ChangeNotifier {
         int totalItemactionalbel = 0;
         totalnumberofIteminAPicklits =
             totalnumberofIteminAPicklits + i.total!.toInt();
-        totalactionItem = totalactionItem + i.pickedQty!.toInt();
+        if(i.available == false){
+          totalactionItem = totalactionItem + i.total!;
+        }
+        else{
+         totalactionItem = totalactionItem + i.pickedQty!.toInt();
+        }
       }
       getItemlistmessage = 'Success';
       notifyListeners();
@@ -75,6 +81,7 @@ class PicklistProvider extends ChangeNotifier {
     try {
       productlistinbin = await PicklistService()
           .getproductlistinbin(currentPicklistId ?? 0, currentProductId!);
+      currentBinId = productlistinbin.pickingOrder![0].binId;
       productlistinBinmessage = 'Success';
       notifyListeners();
       return productlistinbin;
@@ -85,9 +92,23 @@ class PicklistProvider extends ChangeNotifier {
     }
   }
 
-  Future<bool> completePickList()async {
-    var response = await PicklistService().completePickList(currentPicklistId ?? 0);
+  Future<bool> completePickList() async {
+    var response =
+        await PicklistService().completePickList(currentPicklistId ?? 0);
     return true;
+  }
+
+  Future<bool> markItemInAbinstatus(String reason) async {
+    var response = await PicklistService().markstatusforitem(
+        currentPicklistId ?? 0, currentProductId!, currentBinId! ,reason);
+      print("response45$response");
+      if(response['available']){
+          return true;
+      }
+      else{
+       return false;
+      }
+    
   }
 
   void onRefereshProductlist() {

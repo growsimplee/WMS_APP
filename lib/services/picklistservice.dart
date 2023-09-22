@@ -80,4 +80,22 @@ class PicklistService extends BaseApiService {
       rethrow;
     }
   }
+  Future<Map<String, dynamic>> markstatusforitem(
+      int picklistId , int productId , int binId , String reason) async {
+    try {
+      final body = {
+    "type": "item_not_found",
+    "product_id" : productId,
+    "picklist_id":picklistId,
+    "reason" : reason,
+    "bin_id": binId
+};
+      final response = await sendRequest('/inventory/outflow/pick/',
+          method: 'POST', body: body);
+      return response;
+    } catch (e) {
+      print('error in getRiders==>$e');
+      rethrow;
+    }
+  }
 }

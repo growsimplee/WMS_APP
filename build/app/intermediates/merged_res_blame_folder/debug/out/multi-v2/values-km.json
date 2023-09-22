@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+            "outputFile": "/Users/spurge/Desktop/WMS_project/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
             "map": [
                 {
                     "source": "/Users/spurge/.gradle/caches/transforms-3/ce1b43ec518913bad5c3d5c6cb7bac46/transformed/jetified-play-services-basement-18.1.0/res/values-km/values.xml",

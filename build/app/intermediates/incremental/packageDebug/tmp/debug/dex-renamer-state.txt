@@ -1,9 +1,9 @@
-#Wed Sep 20 18:35:28 IST 2023
-base.0=/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.2=/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.4=/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+#Thu Sep 21 17:47:01 IST 2023
+base.0=/Users/spurge/Desktop/WMS_project/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/spurge/Desktop/WMS_project/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/Users/spurge/Desktop/WMS_project/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.3=/Users/spurge/Desktop/WMS_project/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.4=/Users/spurge/Desktop/WMS_project/build/app/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

@@ -8,6 +8,7 @@ import '../../constant/colors.dart';
 import '../../provider/picklistprovider.dart';
 import '../../utilities/picklist/picklist.dart';
 import '../../widget/common/customeelevatedbutton.dart';
+import '../../widget/common/dialog/askerdialog.dart';
 import '../../widget/common/listshimmer.dart';
 
 class ProductListInPicklist extends StatefulWidget {
@@ -29,7 +30,6 @@ class _ProductListInPicklistState extends State<ProductListInPicklist> {
     int currentserialNumber =
         Provider.of<PicklistProvider>(context, listen: false)
             .currectSerialNumberofProduct;
-            
 
     return Scaffold(
       appBar: AppBar(
@@ -147,13 +147,15 @@ class _ProductListInPicklistState extends State<ProductListInPicklist> {
                                 ),
                                 SizedBox(height: 6),
                                 Text(
-                                   picklistprovider.productlistinbin.productId == null ? "" :
-                                 (picklistprovider.productlistinbin
-                                          .pickingOrder!.isNotEmpty
-                                      ? (picklistprovider.productlistinbin
-                                              .pickingOrder![0].binName ??
-                                          "")
-                                      : ""),
+                                  picklistprovider.productlistinbin.productId ==
+                                          null
+                                      ? ""
+                                      : (picklistprovider.productlistinbin
+                                              .pickingOrder!.isNotEmpty
+                                          ? (picklistprovider.productlistinbin
+                                                  .pickingOrder![0].binName ??
+                                              "")
+                                          : ""),
                                   style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
@@ -163,289 +165,293 @@ class _ProductListInPicklistState extends State<ProductListInPicklist> {
                             ),
                           ),
                         ),
-                        if(picklistprovider.productlistinbin.productId != null)
-                        if (picklistprovider.productlistinbin.summary!.length >
-                            1)
-                          GestureDetector(
-                            onTap: () => {
-                              showModalBottomSheet(
-                                  shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(16),
-                                      topRight: Radius.circular(16),
-                                    ),
-                                  ),
-                                  context: context,
-                                  builder: (context) {
-                                    return Container(
-                                      decoration: const BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(16.0),
-                                          topRight: Radius.circular(16.0),
-                                        ),
+                        if (picklistprovider.productlistinbin.productId != null)
+                          if (picklistprovider
+                                  .productlistinbin.summary!.length >
+                              1)
+                            GestureDetector(
+                              onTap: () => {
+                                showModalBottomSheet(
+                                    shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(16),
+                                        topRight: Radius.circular(16),
                                       ),
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.9,
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              color: Color(0xffF1F1F2)
-                                                  .withOpacity(0.3),
-                                              borderRadius:
-                                                  const BorderRadius.only(
-                                                topLeft: Radius.circular(16.0),
-                                                topRight: Radius.circular(16.0),
+                                    ),
+                                    context: context,
+                                    builder: (context) {
+                                      return Container(
+                                        decoration: const BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(16.0),
+                                            topRight: Radius.circular(16.0),
+                                          ),
+                                        ),
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.9,
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: Color(0xffF1F1F2)
+                                                    .withOpacity(0.3),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft:
+                                                      Radius.circular(16.0),
+                                                  topRight:
+                                                      Radius.circular(16.0),
+                                                ),
+                                              ),
+                                              padding: const EdgeInsets.only(
+                                                  top: 10,
+                                                  bottom: 10,
+                                                  right: 20,
+                                                  left: 20),
+                                              child: Row(
+                                                children: [
+                                                  const Text(
+                                                    "Bins to Pick",
+                                                    style: TextStyle(
+                                                        fontSize: 20,
+                                                        fontWeight:
+                                                            FontWeight.w500),
+                                                  ),
+                                                  const Spacer(),
+                                                  IconButton(
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+                                                    },
+                                                    icon: const Icon(
+                                                      Icons.close,
+                                                      color: Colors.black,
+                                                      size: 20,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
-                                            padding: const EdgeInsets.only(
-                                                top: 10,
-                                                bottom: 10,
-                                                right: 20,
-                                                left: 20),
-                                            child: Row(
-                                              children: [
-                                                const Text(
-                                                  "Bins to Pick",
-                                                  style: TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                ),
-                                                const Spacer(),
-                                                IconButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                  icon: const Icon(
-                                                    Icons.close,
-                                                    color: Colors.black,
-                                                    size: 20,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: ListView.builder(
-                                                itemCount: picklistprovider
-                                                    .productlistinbin
-                                                    .summary
-                                                    ?.length,
-                                                itemBuilder: (context, index) {
-                                                  return Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            20),
-                                                    child: Container(
-                                                      decoration: BoxDecoration(
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xffA0C2CD), // Border color
-                                                            width:
-                                                                1.0, // Border thickness
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(6)),
-                                                      child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Container(
-                                                              decoration: const BoxDecoration(
+                                            Expanded(
+                                              child: ListView.builder(
+                                                  itemCount: picklistprovider
+                                                      .productlistinbin
+                                                      .summary
+                                                      ?.length,
+                                                  itemBuilder:
+                                                      (context, index) {
+                                                    return Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              20),
+                                                      child: Container(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                                border:
+                                                                    Border.all(
                                                                   color: Color(
-                                                                      0xffECF3F5),
-                                                                  borderRadius: BorderRadius.only(
-                                                                      topLeft: Radius
-                                                                          .circular(
-                                                                              6),
-                                                                      topRight:
-                                                                          Radius.circular(
-                                                                              6))),
-                                                              child: Padding(
+                                                                      0xffA0C2CD), // Border color
+                                                                  width:
+                                                                      1.0, // Border thickness
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            6)),
+                                                        child: Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Container(
+                                                                decoration: const BoxDecoration(
+                                                                    color: Color(
+                                                                        0xffECF3F5),
+                                                                    borderRadius: BorderRadius.only(
+                                                                        topLeft:
+                                                                            Radius.circular(
+                                                                                6),
+                                                                        topRight:
+                                                                            Radius.circular(6))),
+                                                                child: Padding(
+                                                                  padding:
+                                                                      const EdgeInsets
+                                                                          .all(10),
+                                                                  child: Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Text(
+                                                                        "Bin : ${picklistprovider.productlistinbin.summary![index].binName}",
+                                                                        style: const TextStyle(
+                                                                            fontSize:
+                                                                                20,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                            color: Color(0xff0066FF)),
+                                                                      ),
+                                                                      if (picklistprovider
+                                                                              .productlistinbin
+                                                                              .pickingOrder![
+                                                                                  0]
+                                                                              .binName ==
+                                                                          picklistprovider
+                                                                              .productlistinbin
+                                                                              .summary![
+                                                                                  index]
+                                                                              .binName)
+                                                                        if (picklistprovider
+                                                                            .productlistinbin
+                                                                            .pickingOrder!
+                                                                            .isNotEmpty)
+                                                                          Container(
+                                                                            child:
+                                                                                Row(
+                                                                              children: [
+                                                                                const Text(
+                                                                                  "Selected",
+                                                                                  style: TextStyle(color: Color(0xff01A831), fontSize: 14, fontWeight: FontWeight.w400),
+                                                                                ),
+                                                                                const SizedBox(
+                                                                                  width: 10,
+                                                                                ),
+                                                                                SvgPicture.asset(
+                                                                                  "assets/images/tick.svg",
+                                                                                  height: 25,
+                                                                                  width: 25,
+                                                                                )
+                                                                              ],
+                                                                            ),
+                                                                          )
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Container(
+                                                                  child:
+                                                                      Padding(
                                                                 padding:
                                                                     const EdgeInsets
                                                                         .all(10),
                                                                 child: Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceBetween,
                                                                   children: [
-                                                                    Text(
-                                                                      "Bin : ${picklistprovider.productlistinbin.summary![index].binName}",
-                                                                      style: const TextStyle(
-                                                                          fontSize:
-                                                                              20,
-                                                                          fontWeight: FontWeight
-                                                                              .w500,
-                                                                          color:
-                                                                              Color(0xff0066FF)),
-                                                                    ),
-                                                                    if (picklistprovider
-                                                                            .productlistinbin
-                                                                            .pickingOrder![
-                                                                                0]
-                                                                            .binName ==
-                                                                        picklistprovider
-                                                                            .productlistinbin
-                                                                            .summary![index]
-                                                                            .binName)
-                                                                    if(picklistprovider.productlistinbin.pickingOrder!.isNotEmpty)
-                                                                      Container(
-                                                                        child:
-                                                                            Row(
-                                                                          children: [
-                                                                            const Text(
-                                                                              "Selected",
-                                                                              style: TextStyle(color: Color(0xff01A831), fontSize: 14, fontWeight: FontWeight.w400),
-                                                                            ),
-                                                                            const SizedBox(
-                                                                              width: 10,
-                                                                            ),
-                                                                            SvgPicture.asset(
-                                                                              "assets/images/tick.svg",
-                                                                              height: 25,
-                                                                              width: 25,
-                                                                            )
-                                                                          ],
-                                                                        ),
-                                                                      )
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Container(
-                                                                child: Padding(
-                                                              padding:
-                                                                  const EdgeInsets
-                                                                      .all(10),
-                                                              child: Row(
-                                                                children: [
-                                                                  Column(
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      const Text(
-                                                                        "Picked QTY",
-                                                                        style: TextStyle(
-                                                                            fontSize:
-                                                                                13,
-                                                                            fontWeight:
-                                                                                FontWeight.w400,
-                                                                            color: ColorClass.darkGrey),
-                                                                      ),
-                                                                      const SizedBox(
-                                                                          height:
-                                                                              6),
-                                                                      Text(
-                                                                        "${picklistprovider.productlistinbin.summary![index].pickedQty}/${picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt()}",
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          fontSize:
-                                                                              13,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                        ),
-                                                                      )
-                                                                    ],
-                                                                  ),
-                                                                  SizedBox(
-                                                                    width: 40,
-                                                                  ),
-                                                                  Column(
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      const Text(
-                                                                        "status",
-                                                                        style: TextStyle(
-                                                                            fontSize:
-                                                                                13,
-                                                                            fontWeight:
-                                                                                FontWeight.w400,
-                                                                            color: ColorClass.darkGrey),
-                                                                      ),
-                                                                      const SizedBox(
-                                                                          height:
-                                                                              6),
-                                                                      Container(
-                                                                        decoration: BoxDecoration(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(6),
-                                                                            color: Color(int.parse(Picklist.getmultiplebinstatus(picklistprovider.productlistinbin.summary![index].pickedQty!.toInt(), picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt())[1]))),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              const EdgeInsets.all(8.0),
-                                                                          child:
-                                                                              Text(
-                                                                            Picklist.getmultiplebinstatus(picklistprovider.productlistinbin.summary![index].pickedQty!.toInt(),
-                                                                                picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt())[0],
-                                                                            style:
-                                                                                TextStyle(
-                                                                              color: Color(int.parse(Picklist.getmultiplebinstatus(picklistprovider.productlistinbin.summary![index].pickedQty!.toInt(), picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt())[2])),
+                                                                    Column(
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        const Text(
+                                                                          "Picked QTY",
+                                                                          style: TextStyle(
                                                                               fontSize: 13,
-                                                                              fontWeight: FontWeight.w600,
+                                                                              fontWeight: FontWeight.w400,
+                                                                              color: ColorClass.darkGrey),
+                                                                        ),
+                                                                        const SizedBox(
+                                                                            height:
+                                                                                6),
+                                                                        Text(
+                                                                          "${picklistprovider.productlistinbin.summary![index].pickedQty}/${picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt()}",
+                                                                          style:
+                                                                              const TextStyle(
+                                                                            fontSize:
+                                                                                13,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                        )
+                                                                      ],
+                                                                    ),
+                                                                    SizedBox(
+                                                                      width: 40,
+                                                                    ),
+                                                                    Column(
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        const Text(
+                                                                          "status",
+                                                                          style: TextStyle(
+                                                                              fontSize: 13,
+                                                                              fontWeight: FontWeight.w400,
+                                                                              color: ColorClass.darkGrey),
+                                                                        ),
+                                                                        const SizedBox(
+                                                                            height:
+                                                                                6),
+                                                                        Container(
+                                                                          decoration: BoxDecoration(
+                                                                              borderRadius: BorderRadius.circular(6),
+                                                                              color: Color(int.parse(Picklist.getmultiplebinstatus(picklistprovider.productlistinbin.summary![index].pickedQty!.toInt(), picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt())[1]))),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                const EdgeInsets.all(8.0),
+                                                                            child:
+                                                                                Text(
+                                                                              Picklist.getmultiplebinstatus(picklistprovider.productlistinbin.summary![index].pickedQty!.toInt(), picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt())[0],
+                                                                              style: TextStyle(
+                                                                                color: Color(int.parse(Picklist.getmultiplebinstatus(picklistprovider.productlistinbin.summary![index].pickedQty!.toInt(), picklistprovider.productlistinbin.summary![index].pickedQty!.toInt() + picklistprovider.productlistinbin.summary![index].pendingQty!.toInt())[2])),
+                                                                                fontSize: 13,
+                                                                                fontWeight: FontWeight.w600,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ))
-                                                          ]),
-                                                    ),
-                                                  );
-                                                }),
-                                          )
-                                        ],
-                                      ),
-                                    );
-                                  })
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              decoration: const BoxDecoration(
-                                  color: Color(0xffE6DAFF),
-                                  borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(6),
-                                      bottomRight: Radius.circular(6))),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      const Text(
-                                        "Multiple Bins",
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.black),
-                                      ),
-                                      const SizedBox(
-                                        width: 5,
-                                      ),
-                                      SvgPicture.asset(
-                                        "assets/images/CaretDownblack.svg",
-                                        height: 15,
-                                        width: 15,
-                                      ),
-                                    ],
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ))
+                                                            ]),
+                                                      ),
+                                                    );
+                                                  }),
+                                            )
+                                          ],
+                                        ),
+                                      );
+                                    })
+                              },
+                              child: Container(
+                                width: double.infinity,
+                                decoration: const BoxDecoration(
+                                    color: Color(0xffE6DAFF),
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(6),
+                                        bottomRight: Radius.circular(6))),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        const Text(
+                                          "Multiple Bins",
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black),
+                                        ),
+                                        const SizedBox(
+                                          width: 5,
+                                        ),
+                                        SvgPicture.asset(
+                                          "assets/images/CaretDownblack.svg",
+                                          height: 15,
+                                          width: 15,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          )
+                            )
                       ],
                     ),
                   )
@@ -463,139 +469,381 @@ class _ProductListInPicklistState extends State<ProductListInPicklist> {
                 child: ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Card(
-                          elevation: 2,
-                          surfaceTintColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 40,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                    color: Color(int.parse(
-                                        Picklist.getproductListinBinstatus(
-                                            picklistprovider
-                                                .productlistinbin.pickedQty!
-                                                .toInt(),
-                                            picklistprovider
-                                                .productlistinbin.total!
-                                                .toInt())[1])),
-                                    borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(6),
-                                        topRight: Radius.circular(6))),
-                                child: Align(
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    Picklist.getproductListinBinstatus(
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Card(
+                            elevation: 2,
+                            surfaceTintColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                      color: Color(int.parse(
+                                          Picklist.getproductListinBinstatus(
+                                              picklistprovider
+                                                  .productlistinbin.pickedQty!
+                                                  .toInt(),
+                                              picklistprovider
+                                                  .productlistinbin.total!
+                                                  .toInt())[1])),
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(6),
+                                          topRight: Radius.circular(6))),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      Picklist.getproductListinBinstatus(
+                                          picklistprovider
+                                              .productlistinbin.pickedQty!
+                                              .toInt(),
+                                          picklistprovider
+                                              .productlistinbin.total!
+                                              .toInt())[0],
+                                      style: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.all(15),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            "SKU",
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.w400,
+                                                color: ColorClass.darkGrey),
+                                          ),
+                                          const SizedBox(height: 6),
+                                          Text(
+                                            picklistprovider.productlistinbin
+                                                    .productSkuId ??
+                                                "",
+                                            style: const TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w600,
+                                                color: Color(0xff3D5A80)),
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              const Text(
+                                                "Pick QTY",
+                                                style: TextStyle(
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: ColorClass.darkGrey),
+                                              ),
+                                              SizedBox(height: 6),
+                                              Text(
+                                                "${picklistprovider.productlistinbin.pickingOrder![0].pickedQty}/${picklistprovider.productlistinbin.pickingOrder![0].pickedQty!.toInt() + picklistprovider.productlistinbin.pickingOrder![0].pendingQty!.toInt()}",
+                                                style: const TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w600,
+                                                    color:
+                                                        ColorClass.baseColor),
+                                              )
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(15),
+                                  child: Container(
+                                      child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        "Product Name",
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400,
+                                            color: ColorClass.darkGrey),
+                                      ),
+                                      const SizedBox(height: 6),
+                                      Text(
                                         picklistprovider
-                                            .productlistinbin.pickedQty!
-                                            .toInt(),
-                                        picklistprovider.productlistinbin.total!
-                                            .toInt())[0],
-                                    style: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.white),
+                                                .productlistinbin.productName ??
+                                            "",
+                                        style: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xff3D5A80)),
+                                      )
+                                    ],
+                                  )),
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  child: SvgPicture.asset(
+                                    "assets/images/no_imag_big.svg",
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Column(
+                          children: [
+                            Text(
+                              "MARK AS",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff3D5A80),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 30, left: 15, right: 15, bottom: 30),
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => Asker(
+                                        assetpath: 'assets/images/expired.svg',
+                                        title: 'Confirm Product Expired?',
+                                        message:
+                                            'All items of this SKU in the bin will be put on hold. Bin will be recommended for PSV.',
+                                        yes: 'Mark Expired',
+                                        no: 'Back',
+                                        onPressedNo: () {
+                                          Navigator.pop(context, false);
+                                        },
+                                        onPressedYes: () async {
+                                          bool response = await picklistprovider
+                                              .markItemInAbinstatus("EXPIRED");
+                                          Navigator.pop(context, false);
+                                          if (response) {
+                                            // ignore: use_build_context_synchronously
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) => Asker(
+                                                onlysubmit: true,
+                                                assetpath:
+                                                    'assets/images/bin_details.svg',
+                                                title:
+                                                    'Item Available in Another Bin?',
+                                                message:
+                                                    'Item is available in another bin. Please proceed to the next bin',
+                                                yes: 'Pick from Next Bin',
+                                                no: '',
+                                                onPressedNo: () {
+                                                  Navigator.pop(context, false);
+                                                },
+                                                onPressedYes: () async {
+                                                  Navigator.pop(context, false);
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .onRefereshProductlist();
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .getProductDetailsInABin();
+                                                },
+                                              ),
+                                            );
+                                          } else {
+                                            // ignore: use_build_context_synchronously
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) => Asker(
+                                                onlysubmit: true,
+                                                assetpath:
+                                                    'assets/images/not_available.svg',
+                                                title:
+                                                    'Item Not Available in Warehouse?',
+                                                message:
+                                                    'Item is out of stock. Please proceed to the next item',
+                                                yes: 'Move to Next Item',
+                                                no: '',
+                                                onPressedNo: () {
+                                                  Navigator.pop(context, false);
+                                                },
+                                                onPressedYes: () async {
+                                                  Navigator.pop(context, false);
+                                                  Navigator.pop(context, false);
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .onRefereshItemlist();
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .getItemList();
+                                                },
+                                              ),
+                                            );
+                                          }
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    elevation: 0,
+                                    backgroundColor: Colors.transparent,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6),
+                                      side: const BorderSide(
+                                          color: ColorClass.baseColor),
+                                    ),
+                                  ),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(15),
+                                    child: Text(
+                                      "Item Expired",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color: ColorClass.baseColor),
+                                    ),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(15),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          "SKU",
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w400,
-                                              color: ColorClass.darkGrey),
-                                        ),
-                                        const SizedBox(height: 6),
-                                        Text(
-                                          picklistprovider.productlistinbin
-                                                  .productSkuId ??
-                                              "",
-                                          style: const TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff3D5A80)),
-                                        )
-                                      ],
+                                padding: const EdgeInsets.only(
+                                    top: 30, left: 10, right: 10, bottom: 30),
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => Asker(
+                                        assetpath: 'assets/images/Boxes.svg',
+                                        title: 'Confirm Product Not Available?',
+                                        message:
+                                            'All items of this SKU in the bin will be put on hold. Bin will be recommended for PSV.',
+                                        yes: 'Not Available',
+                                        no: 'Back',
+                                        onPressedNo: () {
+                                          Navigator.pop(context, false);
+                                        },
+                                        onPressedYes: () async {
+                                          bool response = await picklistprovider
+                                              .markItemInAbinstatus(
+                                                  "NOT_FOUND");
+                                          if (response) {
+                                            // ignore: use_build_context_synchronously
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) => Asker(
+                                                onlysubmit: true,
+                                                assetpath:
+                                                    'assets/images/bin_details.svg',
+                                                title:
+                                                    'Item Available in Another Bin?',
+                                                message:
+                                                    'Item is available in another bin. Please proceed to the next bin',
+                                                yes: 'Pick from Next Bin',
+                                                no: '',
+                                                onPressedNo: () {
+                                                  Navigator.pop(context, false);
+                                                },
+                                                onPressedYes: () async {
+                                                  Navigator.pop(context, false);
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .onRefereshProductlist();
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .getProductDetailsInABin();
+                                                },
+                                              ),
+                                            );
+                                          } else {
+                                            // ignore: use_build_context_synchronously
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) => Asker(
+                                                onlysubmit: true,
+                                                assetpath:
+                                                    'assets/images/not_available.svg',
+                                                title:
+                                                    'Item Not Available in Warehouse?',
+                                                message:
+                                                    'Item is out of stock. Please proceed to the next item',
+                                                yes: 'Move to Next Item',
+                                                no: '',
+                                                onPressedNo: () {
+                                                  Navigator.pop(context, false);
+                                                },
+                                                onPressedYes: () async {
+                                                  Navigator.pop(context, false);
+                                                  Navigator.pop(context, false);
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .onRefereshItemlist();
+                                                  Provider.of<PicklistProvider>(
+                                                          context,
+                                                          listen: false)
+                                                      .getItemList();
+                                                },
+                                              ),
+                                            );
+                                          }
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    elevation: 0,
+                                    backgroundColor: Colors.transparent,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6),
+                                      side: const BorderSide(
+                                          color: Color(0xffFF756C)),
                                     ),
-                                    Row(
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text(
-                                              "Pick QTY",
-                                              style: TextStyle(
-                                                  fontSize: 13,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: ColorClass.darkGrey),
-                                            ),
-                                            SizedBox(height: 6),
-                                            Text(
-                                              "${picklistprovider.productlistinbin.pickedQty}/${picklistprovider.productlistinbin.total}",
-                                              style: const TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: ColorClass.baseColor),
-                                            )
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(15),
-                                child: Container(
-                                    child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Product Name",
+                                  ),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(15),
+                                    child: Text(
+                                      "Item Not Avilable",
                                       style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w400,
-                                          color: ColorClass.darkGrey),
-                                    ),
-                                    const SizedBox(height: 6),
-                                    Text(
-                                      picklistprovider
-                                              .productlistinbin.productName ??
-                                          "",
-                                      style: const TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.w600,
-                                          color: Color(0xff3D5A80)),
-                                    )
-                                  ],
-                                )),
-                              ),
-                              Container(
-                                width: double.infinity,
-                                child: SvgPicture.asset(
-                                  "assets/images/no_imag_big.svg",
+                                          color: Color(0xffFF756C)),
+                                    ),
+                                  ),
                                 ),
                               )
                             ],
-                          )),
+                          ),
+                        )
+                      ],
                     );
                   },
                 ),
@@ -615,19 +863,21 @@ class _ProductListInPicklistState extends State<ProductListInPicklist> {
                         "picking",
                         picklistprovider.currentProductId,
                         picklistprovider.currentPicklistId,
-                        picklistprovider.productlistinbin.pickingOrder![0].binName,
                         picklistprovider
-                                .productlistinbin.pickingOrder![0].pickedQty!
-                                .toInt(),
+                            .productlistinbin.pickingOrder![0].binName,
+                        picklistprovider
+                            .productlistinbin.pickingOrder![0].pickedQty!
+                            .toInt(),
                         picklistprovider
                                 .productlistinbin.pickingOrder![0].pendingQty!
                                 .toInt() +
                             picklistprovider
                                 .productlistinbin.pickingOrder![0].pickedQty!
                                 .toInt());
-                    await  Navigator.pushNamed(context, '/scans');
-                    if (mounted){
-                     Provider.of<PicklistProvider>(context, listen: false).getProductDetailsInABin(); 
+                    await Navigator.pushNamed(context, '/scans');
+                    if (mounted) {
+                      Provider.of<PicklistProvider>(context, listen: false)
+                          .getProductDetailsInABin();
                     }
                   },
                   textcolor: Colors.white,

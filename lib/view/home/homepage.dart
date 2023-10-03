@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../../constant/colors.dart';
 import '../../provider/authprovider.dart';
+import '../../provider/picklistprovider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,48 +13,55 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void initState() {
+    super.initState();
+    Provider.of<PicklistProvider>(context, listen: false).onRefereh();
+    var response = Provider.of<PicklistProvider>(context, listen: false)
+        .getActivePicklist(1);
+  }
 
   @override
   Widget build(BuildContext context) {
-      var authprovider = Provider.of<AuthProvider>(context, listen: false);
+    var authprovider = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
       backgroundColor: ColorClass.backgroundColor,
       appBar: AppBar(
-         elevation: 0,
+        elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 8),
-          child: Container(child: SvgPicture.asset("assets/images/warehouse.svg")),
+          child:
+              Container(child: SvgPicture.asset("assets/images/warehouse.svg")),
         ),
         toolbarHeight: 75,
         actions: [
           Consumer<AuthProvider>(builder: (context, authProvider, child) {
-      return TextButton(
-        onPressed: () {
-          authProvider.logOut().then((value) {
-            Navigator.pushNamedAndRemoveUntil(
-                context, '/login', (route) => false);
-          });
-        },
-        child: Container(
-          decoration: BoxDecoration(
-              color: Color(0xFF0D0D0D).withOpacity(0.3),
-              border: Border.all(color: Color(0xFFEDF2F4)),
-              borderRadius: BorderRadius.circular(20),
-            ),
-          child: const Padding(
-             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-            child: Text('Logout',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                )),
-          ),
-        ),
-      );
-    }),
+            return TextButton(
+              onPressed: () {
+                authProvider.logOut().then((value) {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/login', (route) => false);
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFF0D0D0D).withOpacity(0.3),
+                  border: Border.all(color: Color(0xFFEDF2F4)),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                  child: Text('Logout',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      )),
+                ),
+              ),
+            );
+          }),
         ],
-        title:  Padding(
+        title: Padding(
           padding: EdgeInsets.all(10),
           child: InkWell(
             child: Column(
@@ -93,17 +101,32 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 15,),
-              Row(
-                children: [
-                  Flexible(
-                    flex: 3,
-                    child: smallcardWidget(context, 'Picking', '/picklist',
-                        'assets/images/picking.svg', ""),
-                  ),
-                  Flexible(flex: 3, child: Container()),
-                ],
-              )
+              const SizedBox(
+                height: 15,
+              ),
+              Consumer<PicklistProvider>(
+                  builder: (context, picklistprovider, child) {
+                return Row(
+                  children: [
+                    Flexible(
+                      flex: 3,
+                      child: smallcardWidget(
+                          context,
+                          'Picking',
+                          '/picklist',
+                          'assets/images/picking.svg',
+                          "",
+                          picklistprovider.activepicklistList!.isNotEmpty
+                              ? 'Pending ⚠️'
+                              : "Great Job 👍",
+                          picklistprovider.activepicklistList!.isNotEmpty
+                              ? 0xffFF756C
+                              : 0xff38B58B),
+                    ),
+                    Flexible(flex: 3, child: Container()),
+                  ],
+                );
+              })
             ],
           ),
         ),
@@ -112,8 +135,14 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget smallcardWidget(BuildContext context, String title, String route,
-    String assetPath, String ArrayLength) {
+Widget smallcardWidget(
+    BuildContext context,
+    String title,
+    String route,
+    String assetPath,
+    String ArrayLength,
+    String statustext,
+    int statustextboxbg) {
   return GestureDetector(
     onTap: () => {
       Navigator.pushNamed(context, route)
@@ -130,7 +159,7 @@ Widget smallcardWidget(BuildContext context, String title, String route,
           ),
         ],
       ),
-      height: 185,
+      height: 210,
       child: Card(
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -138,8 +167,28 @@ Widget smallcardWidget(BuildContext context, String title, String route,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: Color(statustextboxbg), // Light grey background color
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(4),
+                    bottomLeft: Radius.circular(4),
+                  ),
+                ),
+                child: Text(
+                  statustext,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white, // Black text color
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(
                   left: 15, right: 0, bottom: 15, top: 15),

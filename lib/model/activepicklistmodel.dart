@@ -25,6 +25,8 @@ class ActivePicklist {
     data['count'] = this.count;
     return data;
   }
+
+  void clear() {}
 }
 
 class ActivePicklistResults {

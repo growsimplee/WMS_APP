@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wms_app/view/home/homepage.dart';
+import 'package:wms_app/view/splash/splashpage.dart';
 
 import '../provider/authprovider.dart';
 import '../view/auth/loginpage.dart';
@@ -23,13 +24,13 @@ class _AuthWrapperState extends State<AuthWrapper> {
         print(snapshot.data);
         if (snapshot.connectionState == ConnectionState.waiting ||
             snapshot.data == null) {
-          return Container();
+          return SplashPage();
         } else if (snapshot.data == 'login') {
           return LoginPage();
         } else if (snapshot.data == 'home') {
           return HomePage();
         }
-      return Container(); // Main Screen
+      return SplashPage(); // Main Screen
       },
     );
   }

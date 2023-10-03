@@ -17,9 +17,10 @@ class ScanProvider extends ChangeNotifier {
   ProductListInBin productlistinbin = ProductListInBin();
   String startingBin = "";
   String activebin = "";
+  TextEditingController manualAWB = TextEditingController();
 
-  void getscanningdetails(
-      title, scantype, productId, picklistid,binName,pendingItem ,totalscanningitem) {
+  void getscanningdetails(title, scantype, productId, picklistid, binName,
+      pendingItem, totalscanningitem) {
     scanpagetitle = title;
     scaningtype = scantype;
     currentProductId = productId;
@@ -49,18 +50,21 @@ class ScanProvider extends ChangeNotifier {
       if (response['success'] == true) {
         productlistinbin = await PicklistService()
             .getproductlistinbin(currentPicklistId ?? 0, currentProductId!);
-       pendingItemtobescaned =
-        productlistinbin.pickingOrder!.isNotEmpty
+        pendingItemtobescaned = productlistinbin.pickingOrder!.isNotEmpty
             ? productlistinbin.pickingOrder![0].pickedQty
             : totalItem;
-        activebin =  (productlistinbin.pickingOrder!.isNotEmpty
-            ? productlistinbin.pickingOrder![0].binName : "")!;
+        activebin = (productlistinbin.pickingOrder!.isNotEmpty
+            ? productlistinbin.pickingOrder![0].binName
+            : "")!;
+        currentProductId = productlistinbin.nextProduct ?? productlistinbin.productId ;
         processing = false;
+        manualAWB.text = '';  
         notifyListeners();
         return true;
       } else {
         errorMessage = response['message'];
         processing = false;
+        manualAWB.text = '';
         notifyListeners();
         return false;
       }

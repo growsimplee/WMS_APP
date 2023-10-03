@@ -49,7 +49,7 @@ class PicklistService extends BaseApiService {
   }
 
   Future<Map<String, dynamic>> pickItem(
-      int picklistId, int productId, String barcode) async {
+      int picklistId, int? productId, String barcode) async {
     try {
       final body = {
         "type": "pick_item",

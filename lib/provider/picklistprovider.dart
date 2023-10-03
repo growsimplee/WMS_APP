@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:wms_app/model/activepicklistmodel.dart';
 import 'package:wms_app/model/itemlistmodel.dart';
 import 'package:wms_app/model/productlistinbin.dart';
@@ -10,6 +11,7 @@ class PicklistProvider extends ChangeNotifier {
   Itemlistmodel itemList = Itemlistmodel();
   ProductListInBin productlistinbin = ProductListInBin();
   List<ActivePicklistResults>? activepicklistList = [];
+  List<ActivePicklistResults>? copyactiveList = [];
   String errorMessage = "";
   String getItemlistmessage = "";
   String productlistinBinmessage = "";
@@ -21,10 +23,19 @@ class PicklistProvider extends ChangeNotifier {
   int? currentProductId;
   int currectSerialNumberofProduct = 1;
   int? currentBinId;
+  int totalPicklistPage = 0;
+  int? nextproductId;
+  RefreshController refreshControllerPicklist =
+      RefreshController(initialRefresh: false);
   Future<ActivePicklist> getActivePicklist(int currentPage) async {
     try {
-      activepicklist = await PicklistService().getactivepicklist(1);
-      activepicklistList = activepicklist.results;
+      copyactiveList?.clear();
+      activepicklist = await PicklistService().getactivepicklist(currentPage);
+      copyactiveList = activepicklist.results;
+      totalPicklistPage = activepicklist.pages!;
+      for(var i in copyactiveList!){
+          activepicklistList?.add(i);
+      }
       for (var i in activepicklistList!) {
         totalNumberOfItems = (totalNumberOfItems! + i.totalItems!.toInt());
         if (i.status == "PENDING" || i.status == "STARTED") {
@@ -71,7 +82,7 @@ class PicklistProvider extends ChangeNotifier {
     }
   }
 
-  void getselectedproductdetails(int currectIndex, int productId) {
+  void getselectedproductdetails(int currectIndex, int? productId) {
     currectSerialNumberofProduct = currectIndex;
     currentProductId = productId;
     notifyListeners();
@@ -82,6 +93,7 @@ class PicklistProvider extends ChangeNotifier {
       productlistinbin = await PicklistService()
           .getproductlistinbin(currentPicklistId ?? 0, currentProductId!);
       currentBinId = productlistinbin.pickingOrder![0].binId;
+      nextproductId = productlistinbin.nextProduct;
       productlistinBinmessage = 'Success';
       notifyListeners();
       return productlistinbin;
@@ -119,7 +131,9 @@ class PicklistProvider extends ChangeNotifier {
   void onRefereh() {
     errorMessage = '';
     totalNumberOfItems = 0;
+    activepicklistList?.clear();
     pendingPicklist = 0;
+    refreshControllerPicklist.loadComplete();
     notifyListeners();
   }
 

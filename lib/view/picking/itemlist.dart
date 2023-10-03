@@ -481,14 +481,17 @@ class _ItemListState extends State<ItemList> {
                                                         )
                                                       ],
                                                     ),
-                                                    SizedBox(width: 200),
-                                                    Container(
-                                                      height: 20,
-                                                      width: 20,
-                                                      child: SvgPicture.asset(
-                                                        "assets/images/CaretDown.svg",
-                                                        height: 50,
-                                                        width: 50,
+                                                    SizedBox(width: 185),
+                                                    Align(
+                                                      alignment: Alignment.topRight,
+                                                      child: Container(
+                                                        height: 20,
+                                                        width: 20,
+                                                        child: SvgPicture.asset(
+                                                          "assets/images/CaretDown.svg",
+                                                          height: 50,
+                                                          width: 50,
+                                                        ),
                                                       ),
                                                     )
                                                   ],

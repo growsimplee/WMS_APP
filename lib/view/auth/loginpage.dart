@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lottie/lottie.dart';
 // import 'package:lottie/lottie.dart';
 // import 'package:overwatch/widgets/common/footer.dart';
 // import 'package:overwatch/widgets/dialogs/loadingdialog.dart';
@@ -9,7 +10,6 @@ import '../../constant/colors.dart';
 import '../../provider/authprovider.dart';
 import '../../widget/common/customeelevatedbutton.dart';
 import '../../widget/common/footer.dart';
-
 
 class YourPage extends StatelessWidget {
   @override
@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> _waitForAnimation() async {
-    await Future.delayed(const Duration(seconds: 0));
+    await Future.delayed(const Duration(seconds: 2));
   }
 
   @override
@@ -47,7 +47,8 @@ class _LoginPageState extends State<LoginPage> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
-            child: Container(), // Your animation path
+            child: Lottie.asset(
+                'assets/flow_animation.json'), // Your animation path
           );
         } else {
           return LoginForm(); // Replace this with your container content

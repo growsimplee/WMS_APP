@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
 // import 'package:overwatch/constant/constdata.dart';
 // import 'package:overwatch/provider/auth_provider.dart';
 // import 'package:overwatch/utilities/servicelocator.dart';
@@ -32,11 +33,9 @@ class _SplashPageState extends State<SplashPage> {
               // const SizedBox(
               //   height: 50,
               // ),
-              Center(
-                child: SvgPicture.asset(
-                'assets/images/gs_logo.svg',
-                color: Colors.white,
-              ), // Replace with your animation file path
+               Center(
+                child: Lottie.asset(
+                    'assets/flow_animation.json'), 
               ),
               // SvgPicture.asset(
               //   'assets/images/gs_logo.svg',

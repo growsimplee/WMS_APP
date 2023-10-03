@@ -23,6 +23,8 @@ dependencies:
   shimmer: ^3.0.0
   mobile_scanner: ^3.4.1
   flutter_beep: ^1.0.0
+  pull_to_refresh: ^2.0.0
+  lottie: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -40,9 +42,11 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  uses-material-design: true
 
   assets:
    - assets/images/
+   - assets/flow_animation.json
    
   fonts:
     - family: Poppins
@@ -66,7 +70,25 @@ flutter:
         - asset: assets/fonts/poppins/Poppins-Thin.ttf
         - asset: assets/fonts/poppins/Poppins-ThinItalic.ttf
 
-
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/icon/gs.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icon/gs.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/icon/gs.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icon/gs.png"
+ 
  
   uses-material-design: true
 

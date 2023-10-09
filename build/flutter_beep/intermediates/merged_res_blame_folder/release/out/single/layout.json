@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/layout/custom_dialog.xml",
-        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/custom_dialog.xml"
-    },
-    {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/layout/notification_template_icon_group.xml",
+        "merged": "/Users/spurge/Desktop/WMS_project/build/flutter_beep/intermediates/merged_res/release/layout/notification_template_icon_group.xml",
         "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/notification_template_icon_group.xml"
     },
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/layout/notification_action_tombstone.xml",
+        "merged": "/Users/spurge/Desktop/WMS_project/build/flutter_beep/intermediates/merged_res/release/layout/notification_action_tombstone.xml",
         "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/notification_action_tombstone.xml"
     },
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/layout/notification_action.xml",
-        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/notification_action.xml"
+        "merged": "/Users/spurge/Desktop/WMS_project/build/flutter_beep/intermediates/merged_res/release/layout/custom_dialog.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/custom_dialog.xml"
     },
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/layout/notification_template_part_time.xml",
+        "merged": "/Users/spurge/Desktop/WMS_project/build/flutter_beep/intermediates/merged_res/release/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/spurge/Desktop/WMS_project/build/flutter_beep/intermediates/merged_res/release/layout/notification_template_part_time.xml",
         "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/intermediates/merged_res/release/layout/notification_template_part_chronometer.xml",
-        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
+        "merged": "/Users/spurge/Desktop/WMS_project/build/flutter_beep/intermediates/merged_res/release/layout/notification_action.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout/notification_action.xml"
     }
 ]

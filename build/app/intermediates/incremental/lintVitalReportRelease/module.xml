@@ -1,11 +1,11 @@
 <lint-module
     format="1"
-    dir="/Users/spurge/Desktop/WMS APP/wms_app/android/app"
+    dir="/Users/spurge/Desktop/WMS_project/android/app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.1.2"
-    buildFolder="/Users/spurge/Desktop/WMS APP/wms_app/build/app"
+    buildFolder="/Users/spurge/Desktop/WMS_project/build/app"
     bootClassPath="/Users/spurge/Library/Android/sdk/platforms/android-33/android.jar:/Users/spurge/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33">

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/incremental/mergeReleaseResources/merged.dir/values-kk/values-kk.xml",
+            "outputFile": "/Users/spurge/Desktop/WMS_project/build/mobile_scanner/intermediates/merged_res/release/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "/Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/res/values-kk/values.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/merged_res/release/values-kk/values-kk.xml",
+            "outputFile": "/Users/spurge/Desktop/WMS_project/build/mobile_scanner/intermediates/incremental/mergeReleaseResources/merged.dir/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "/Users/spurge/.gradle/caches/transforms-3/3c605c5e1dd7619c9a87068d905e61bc/transformed/jetified-play-services-base-18.1.0/res/values-kk/values.xml",

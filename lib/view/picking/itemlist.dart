@@ -30,6 +30,10 @@ class _ItemListState extends State<ItemList> {
           actions: [
             TextButton(
               onPressed: () async {
+                if (pickprovider.totalactionItem !=
+                    pickprovider.totalnumberofIteminAPicklits) {
+                  return;
+                }
                 bool value = await pickprovider.completePickList();
                 if (value) {
                   // ignore: use_build_context_synchronously
@@ -220,10 +224,8 @@ class _ItemListState extends State<ItemList> {
                   ),
                 ),
                 if (picklistprovider.getItemlistmessage == "")
-                  Expanded(
-                    child: Container(
-                      child: const ListviewShimmer(),
-                    ),
+                  const Expanded(
+                    child: ListviewShimmer(),
                   ),
                 if (picklistprovider.getItemlistmessage != "" &&
                     picklistprovider.itemList.pendency!.isNotEmpty)
@@ -231,332 +233,333 @@ class _ItemListState extends State<ItemList> {
                     child: ListView.builder(
                       itemCount: picklistprovider.itemList.pendency?.length,
                       itemBuilder: (context, index) {
-                        return Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                bottom: 15, left: 10, right: 10, top: 10),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    color: Color.fromRGBO(50, 61, 68, 0.12),
-                                    offset: Offset(0, 4),
-                                    blurRadius: 14,
-                                    spreadRadius: 0,
-                                  ),
-                                ],
-                              ),
-                              child: GestureDetector(
-                                onTap: () async {
-                                  picklistprovider.getselectedproductdetails(
-                                      index + 1,
-                                      picklistprovider.itemList.pendency![index]
-                                              .productId ??
-                                          0);
-                                  if (Picklist.getItemListstatus(
-                                              picklistprovider.itemList
-                                                  .pendency![index].pickedQty!
-                                                  .toInt(),
-                                              picklistprovider.itemList
-                                                  .pendency![index].total!
-                                                  .toInt(),
-                                              picklistprovider
-                                                      .itemList
-                                                      .pendency![index]
-                                                      .available ??
-                                                  true)[0] ==
-                                          "Not Picked" ||
-                                      Picklist.getItemListstatus(
-                                              picklistprovider.itemList
-                                                  .pendency![index].pickedQty!
-                                                  .toInt(),
-                                              picklistprovider.itemList
-                                                  .pendency![index].total!
-                                                  .toInt(),
-                                              picklistprovider
-                                                      .itemList
-                                                      .pendency![index]
-                                                      .available ??
-                                                  true)[0] ==
-                                          "Partially Picked") {
-                                    await Navigator.pushNamed(
-                                        context, '/picklist/items/productlist');
-                                    if (mounted) {
-                                      Provider.of<PicklistProvider>(context,
-                                              listen: false)
-                                          .onRefereshProductlist();
-                                      Provider.of<PicklistProvider>(context,
-                                              listen: false)
-                                          .onRefereshItemlist();
-                                      Provider.of<PicklistProvider>(context,
-                                              listen: false)
-                                          .getItemList();
-                                    }
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                              bottom: 15, left: 10, right: 10, top: 10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromRGBO(50, 61, 68, 0.12),
+                                  offset: Offset(0, 4),
+                                  blurRadius: 14,
+                                  spreadRadius: 0,
+                                ),
+                              ],
+                            ),
+                            child: GestureDetector(
+                              onTap: () async {
+                                picklistprovider.getselectedproductdetails(
+                                    index + 1,
+                                    picklistprovider.itemList.pendency![index]
+                                            .productId ??
+                                        0);
+                                if (Picklist.getItemListstatus(
+                                            picklistprovider.itemList
+                                                .pendency![index].pickedQty!
+                                                .toInt(),
+                                            picklistprovider.itemList
+                                                .pendency![index].total!
+                                                .toInt(),
+                                            picklistprovider
+                                                    .itemList
+                                                    .pendency![index]
+                                                    .available ??
+                                                true)[0] ==
+                                        "Not Picked" ||
+                                    Picklist.getItemListstatus(
+                                            picklistprovider.itemList
+                                                .pendency![index].pickedQty!
+                                                .toInt(),
+                                            picklistprovider.itemList
+                                                .pendency![index].total!
+                                                .toInt(),
+                                            picklistprovider
+                                                    .itemList
+                                                    .pendency![index]
+                                                    .available ??
+                                                true)[0] ==
+                                        "Partially Picked") {
+                                  await Navigator.pushNamed(
+                                      context, '/picklist/items/productlist');
+                                  if (mounted) {
+                                    Provider.of<PicklistProvider>(context,
+                                            listen: false)
+                                        .onRefereshProductlist();
+                                    Provider.of<PicklistProvider>(context,
+                                            listen: false)
+                                        .onRefereshItemlist();
+                                    Provider.of<PicklistProvider>(context,
+                                            listen: false)
+                                        .getItemList();
                                   }
-                                },
-                                child: Card(
-                                  elevation: 2,
-                                  surfaceTintColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Column(
-                                    children: [
-                                      Row(
+                                }
+                              },
+                              child: Card(
+                                elevation: 2,
+                                surfaceTintColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                            decoration: const BoxDecoration(
+                                                color: Color(0xffF0EAFC),
+                                                borderRadius:
+                                                    BorderRadius.only(
+                                                  topLeft:
+                                                      Radius.circular(10),
+                                                  bottomRight:
+                                                      Radius.circular(10),
+                                                )),
+                                            child: Padding(
+                                              padding: EdgeInsets.all(12),
+                                              child: Text(
+                                                (index + 1).toString(),
+                                                style: const TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.w600,
+                                                    color:
+                                                        ColorClass.baseColor),
+                                              ),
+                                            )),
+                                        Container(
+                                            decoration: BoxDecoration(
+                                                color: Color(int.parse(
+                                                    Picklist.getItemListstatus(
+                                                        picklistprovider
+                                                            .itemList
+                                                            .pendency![index]
+                                                            .pickedQty!
+                                                            .toInt(),
+                                                        picklistprovider
+                                                            .itemList
+                                                            .pendency![index]
+                                                            .total!
+                                                            .toInt(),
+                                                        picklistprovider
+                                                                .itemList
+                                                                .pendency![
+                                                                    index]
+                                                                .available ??
+                                                            true)[1])),
+                                                borderRadius:
+                                                    BorderRadius.only(
+                                                  topRight:
+                                                      Radius.circular(10),
+                                                  bottomLeft:
+                                                      Radius.circular(10),
+                                                )),
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 30,
+                                                  right: 8,
+                                                  top: 5,
+                                                  bottom: 5),
+                                              child: Text(
+                                                Picklist.getItemListstatus(
+                                                    picklistprovider
+                                                        .itemList
+                                                        .pendency![index]
+                                                        .pickedQty!
+                                                        .toInt(),
+                                                    picklistprovider
+                                                        .itemList
+                                                        .pendency![index]
+                                                        .total!
+                                                        .toInt(),
+                                                    picklistprovider
+                                                            .itemList
+                                                            .pendency![index]
+                                                            .available ??
+                                                        true)[0],
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.w600,
+                                                    color: Color(int.parse(
+                                                        Picklist.getItemListstatus(
+                                                            picklistprovider
+                                                                .itemList
+                                                                .pendency![
+                                                                    index]
+                                                                .pickedQty!
+                                                                .toInt(),
+                                                            picklistprovider
+                                                                .itemList
+                                                                .pendency![
+                                                                    index]
+                                                                .total!
+                                                                .toInt(),
+                                                            picklistprovider
+                                                                    .itemList
+                                                                    .pendency![
+                                                                        index]
+                                                                    .available ??
+                                                                true)[2]))),
+                                              ),
+                                            ))
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(10),
+                                      child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.start,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
                                           Container(
-                                              decoration: const BoxDecoration(
-                                                  color: Color(0xffF0EAFC),
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                    topLeft:
-                                                        Radius.circular(10),
-                                                    bottomRight:
-                                                        Radius.circular(10),
-                                                  )),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(12),
-                                                child: Text(
-                                                  (index + 1).toString(),
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
+                                            decoration: BoxDecoration(
+                                              color: ColorClass.baseColor
+                                                  .withOpacity(0.05),
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              border: Border.all(
+                                                color: ColorClass.darkGrey
+                                                    .withOpacity(0.2),
+                                                width: 1,
+                                              ),
+                                            ),
+                                            child: SvgPicture.asset(
+                                              "assets/images/no-imag.svg",
+                                              height: 100,
+                                              width: 100,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 20,
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      const Text(
+                                                        "SKU Id",
+                                                        style: TextStyle(
+                                                            fontSize: 13,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w400,
+                                                            color: ColorClass
+                                                                .darkGrey),
+                                                      ),
+                                                      Text(
+                                                        overflow: TextOverflow.ellipsis,
+                                                        picklistprovider
+                                                            .itemList
+                                                            .pendency![index]
+                                                            .productSkuId
+                                                            .toString(),
+                                                        style:
+                                                            const TextStyle(
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  // SizedBox(width: 185),
+                                                  // Align(
+                                                  //   alignment:
+                                                  //       Alignment.topRight,
+                                                  //   child: Container(
+                                                  //     height: 20,
+                                                  //     width: 20,
+                                                  //     child: SvgPicture.asset(
+                                                  //       "assets/images/CaretDown.svg",
+                                                  //       height: 50,
+                                                  //       width: 50,
+                                                  //     ),
+                                                  //   ),
+                                                  // )
+                                                ],
+                                              ),
+                                              const SizedBox(height: 20),
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  const Text(
+                                                   overflow: TextOverflow.ellipsis,
+                                                    "Product Name",
+                                                    style: TextStyle(
+                                                        fontSize: 13,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: ColorClass
+                                                            .darkGrey),
+                                                  ),
+                                                  const SizedBox(height: 6),
+                                                  Text(
+                                                    picklistprovider
+                                                        .itemList
+                                                        .pendency![index]
+                                                        .productName
+                                                        .toString(),
+                                                    style: const TextStyle(
+                                                      fontSize: 18,
                                                       fontWeight:
                                                           FontWeight.w600,
-                                                      color:
-                                                          ColorClass.baseColor),
-                                                ),
-                                              )),
-                                          Container(
-                                              decoration: BoxDecoration(
-                                                  color: Color(int.parse(
-                                                      Picklist.getItemListstatus(
-                                                          picklistprovider
-                                                              .itemList
-                                                              .pendency![index]
-                                                              .pickedQty!
-                                                              .toInt(),
-                                                          picklistprovider
-                                                              .itemList
-                                                              .pendency![index]
-                                                              .total!
-                                                              .toInt(),
-                                                          picklistprovider
-                                                                  .itemList
-                                                                  .pendency![
-                                                                      index]
-                                                                  .available ??
-                                                              true)[1])),
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                    topRight:
-                                                        Radius.circular(10),
-                                                    bottomLeft:
-                                                        Radius.circular(10),
-                                                  )),
-                                              child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 30,
-                                                    right: 8,
-                                                    top: 5,
-                                                    bottom: 5),
-                                                child: Text(
-                                                  Picklist.getItemListstatus(
-                                                      picklistprovider
-                                                          .itemList
-                                                          .pendency![index]
-                                                          .pickedQty!
-                                                          .toInt(),
-                                                      picklistprovider
-                                                          .itemList
-                                                          .pendency![index]
-                                                          .total!
-                                                          .toInt(),
-                                                      picklistprovider
-                                                              .itemList
-                                                              .pendency![index]
-                                                              .available ??
-                                                          true)[0],
-                                                  style: TextStyle(
-                                                      fontSize: 12,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                              SizedBox(height: 20),
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  const Text(
+                                                    "Qty to be Picked",
+                                                    style: TextStyle(
+                                                        fontSize: 13,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: ColorClass
+                                                            .darkGrey),
+                                                  ),
+                                                  const SizedBox(height: 6),
+                                                  Text(
+                                                    "${picklistprovider.itemList.pendency?[index].pickedQty}/${picklistprovider.itemList.pendency?[index].total}",
+                                                    style: const TextStyle(
+                                                      fontSize: 18,
                                                       fontWeight:
                                                           FontWeight.w600,
-                                                      color: Color(int.parse(
-                                                          Picklist.getItemListstatus(
-                                                              picklistprovider
-                                                                  .itemList
-                                                                  .pendency![
-                                                                      index]
-                                                                  .pickedQty!
-                                                                  .toInt(),
-                                                              picklistprovider
-                                                                  .itemList
-                                                                  .pendency![
-                                                                      index]
-                                                                  .total!
-                                                                  .toInt(),
-                                                              picklistprovider
-                                                                      .itemList
-                                                                      .pendency![
-                                                                          index]
-                                                                      .available ??
-                                                                  true)[2]))),
-                                                ),
-                                              ))
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ],
+                                          )
                                         ],
                                       ),
-                                      const SizedBox(
-                                        height: 5,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(10),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color: ColorClass.baseColor
-                                                    .withOpacity(0.05),
-                                                borderRadius:
-                                                    BorderRadius.circular(6),
-                                                border: Border.all(
-                                                  color: ColorClass.darkGrey
-                                                      .withOpacity(0.2),
-                                                  width: 1,
-                                                ),
-                                              ),
-                                              child: SvgPicture.asset(
-                                                "assets/images/no-imag.svg",
-                                                height: 100,
-                                                width: 100,
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 20,
-                                            ),
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        const Text(
-                                                          "SKU Id",
-                                                          style: TextStyle(
-                                                              fontSize: 13,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                              color: ColorClass
-                                                                  .darkGrey),
-                                                        ),
-                                                        Text(
-                                                          picklistprovider
-                                                              .itemList
-                                                              .pendency![index]
-                                                              .productSkuId
-                                                              .toString(),
-                                                          style:
-                                                              const TextStyle(
-                                                            fontSize: 18,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                          ),
-                                                        )
-                                                      ],
-                                                    ),
-                                                    SizedBox(width: 185),
-                                                    Align(
-                                                      alignment: Alignment.topRight,
-                                                      child: Container(
-                                                        height: 20,
-                                                        width: 20,
-                                                        child: SvgPicture.asset(
-                                                          "assets/images/CaretDown.svg",
-                                                          height: 50,
-                                                          width: 50,
-                                                        ),
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                                const SizedBox(height: 20),
-                                                Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    const Text(
-                                                      "Product Name",
-                                                      style: TextStyle(
-                                                          fontSize: 13,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: ColorClass
-                                                              .darkGrey),
-                                                    ),
-                                                    const SizedBox(height: 6),
-                                                    Text(
-                                                      picklistprovider
-                                                          .itemList
-                                                          .pendency![index]
-                                                          .productName
-                                                          .toString(),
-                                                      style: const TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                                SizedBox(height: 20),
-                                                Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    const Text(
-                                                      "Qty to be Picked",
-                                                      style: TextStyle(
-                                                          fontSize: 13,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: ColorClass
-                                                              .darkGrey),
-                                                    ),
-                                                    const SizedBox(height: 6),
-                                                    Text(
-                                                      "${picklistprovider.itemList.pendency?[index].pickedQty}/${picklistprovider.itemList.pendency?[index].total}",
-                                                      style: const TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                                    )
+                                  ],
                                 ),
                               ),
                             ),

@@ -9,7 +9,7 @@ class AuthService extends BaseApiService {
     var headers = {'Content-Type': 'application/json'};
     final response = await http.post(
       Uri.parse(
-          "https://bdohur9vha.execute-api.ap-south-1.amazonaws.com/v1/auth"),
+          "https://b9qajw9ai7.execute-api.us-east-2.amazonaws.com/v1/auth"),
       headers: headers,
       body: json.encode(
         {
@@ -40,7 +40,7 @@ class AuthService extends BaseApiService {
     };
     final response = await http.post(
         Uri.parse(
-            "https://bdohur9vha.execute-api.ap-south-1.amazonaws.com/v1/auth"),
+            "https://b9qajw9ai7.execute-api.us-east-2.amazonaws.com/v1/auth"),
         headers: headers,
         body: jsonEncode(body));
     Map<String, dynamic> apiResponse = jsonDecode(response.body);

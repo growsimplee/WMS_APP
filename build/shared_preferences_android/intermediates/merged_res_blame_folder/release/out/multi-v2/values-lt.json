@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/shared_preferences_android/intermediates/merged_res/release/values-lt/values-lt.xml",
+            "outputFile": "/Users/spurge/Desktop/WMS_project/build/shared_preferences_android/intermediates/incremental/mergeReleaseResources/merged.dir/values-lt/values-lt.xml",
             "map": [
                 {
                     "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/values-lt/values-lt.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/shared_preferences_android/intermediates/incremental/mergeReleaseResources/merged.dir/values-lt/values-lt.xml",
+            "outputFile": "/Users/spurge/Desktop/WMS_project/build/shared_preferences_android/intermediates/merged_res/release/values-lt/values-lt.xml",
             "map": [
                 {
                     "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/values-lt/values-lt.xml",

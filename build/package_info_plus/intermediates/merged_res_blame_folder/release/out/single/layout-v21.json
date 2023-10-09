@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_template_icon_group.xml",
-        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout-v21/notification_template_icon_group.xml"
+        "merged": "/Users/spurge/Desktop/WMS_project/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout-v21/notification_template_custom_big.xml"
     },
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_action.xml",
+        "merged": "/Users/spurge/Desktop/WMS_project/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_action.xml",
         "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout-v21/notification_action.xml"
     },
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_action_tombstone.xml",
+        "merged": "/Users/spurge/Desktop/WMS_project/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_action_tombstone.xml",
         "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout-v21/notification_action_tombstone.xml"
     },
     {
-        "merged": "/Users/spurge/Desktop/WMS APP/wms_app/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_template_custom_big.xml",
-        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout-v21/notification_template_custom_big.xml"
+        "merged": "/Users/spurge/Desktop/WMS_project/build/package_info_plus/intermediates/merged_res/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/layout-v21/notification_template_icon_group.xml"
     }
 ]

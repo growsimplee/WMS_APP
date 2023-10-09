@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/incremental/mergeReleaseResources/merged.dir/values-te/values-te.xml",
+            "outputFile": "/Users/spurge/Desktop/WMS_project/build/mobile_scanner/intermediates/merged_res/release/values-te/values-te.xml",
             "map": [
                 {
                     "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/values-te/values-te.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/intermediates/merged_res/release/values-te/values-te.xml",
+            "outputFile": "/Users/spurge/Desktop/WMS_project/build/mobile_scanner/intermediates/incremental/mergeReleaseResources/merged.dir/values-te/values-te.xml",
             "map": [
                 {
                     "source": "/Users/spurge/.gradle/caches/transforms-3/7e7e36ca00974ea01c60e606b1c9533b/transformed/core-1.6.0/res/values-te/values-te.xml",

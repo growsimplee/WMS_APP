@@ -1,13 +1,13 @@
 <libraries>
   <library
-      name="__local_aars__:/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
-      jars="/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/flutter/release/libs.jar"
-      resolved="__local_aars__:/Users/spurge/Desktop/WMS APP/wms_app/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
+      name="__local_aars__:/Users/spurge/Desktop/WMS_project/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
+      jars="/Users/spurge/Desktop/WMS_project/build/app/intermediates/flutter/release/libs.jar"
+      resolved="__local_aars__:/Users/spurge/Desktop/WMS_project/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
   <library
-      name="/Users/spurge/Desktop/WMS APP/wms_app/android@@:shared_preferences_android::release"
-      jars="/Users/spurge/Desktop/WMS APP/wms_app/build/shared_preferences_android/.transforms/70ec862dc4f9a9a0ede7422b50781d32/transformed/out/jars/classes.jar"
+      name="/Users/spurge/Desktop/WMS_project/android@@:shared_preferences_android::release"
+      jars="/Users/spurge/Desktop/WMS_project/build/shared_preferences_android/.transforms/660c6e405b94c476cb5179982b651d4f/transformed/out/jars/classes.jar"
       resolved="io.flutter.plugins.sharedpreferences:shared_preferences_android:unspecified"
-      folder="/Users/spurge/Desktop/WMS APP/wms_app/build/shared_preferences_android/.transforms/70ec862dc4f9a9a0ede7422b50781d32/transformed/out"
+      folder="/Users/spurge/Desktop/WMS_project/build/shared_preferences_android/.transforms/660c6e405b94c476cb5179982b651d4f/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -17,10 +17,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/spurge/Desktop/WMS APP/wms_app/android@@:flutter_beep::release"
-      jars="/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/.transforms/ac415ee769f0a67f0b042cb58b382df5/transformed/out/jars/classes.jar"
+      name="/Users/spurge/Desktop/WMS_project/android@@:flutter_beep::release"
+      jars="/Users/spurge/Desktop/WMS_project/build/flutter_beep/.transforms/55130ccbdbb040746b03ba9314a6901c/transformed/out/jars/classes.jar"
       resolved="com.gonoter.flutter_beep:flutter_beep:unspecified"
-      folder="/Users/spurge/Desktop/WMS APP/wms_app/build/flutter_beep/.transforms/ac415ee769f0a67f0b042cb58b382df5/transformed/out"
+      folder="/Users/spurge/Desktop/WMS_project/build/flutter_beep/.transforms/55130ccbdbb040746b03ba9314a6901c/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -30,10 +30,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/spurge/Desktop/WMS APP/wms_app/android@@:package_info_plus::release"
-      jars="/Users/spurge/Desktop/WMS APP/wms_app/build/package_info_plus/.transforms/8a3a738aa4d36c970d09edcf36c9f273/transformed/out/jars/classes.jar"
+      name="/Users/spurge/Desktop/WMS_project/android@@:package_info_plus::release"
+      jars="/Users/spurge/Desktop/WMS_project/build/package_info_plus/.transforms/83b51ad72429f641966d2329d30df3e3/transformed/out/jars/classes.jar"
       resolved="io.flutter.plugins.packageinfo:package_info_plus:unspecified"
-      folder="/Users/spurge/Desktop/WMS APP/wms_app/build/package_info_plus/.transforms/8a3a738aa4d36c970d09edcf36c9f273/transformed/out"
+      folder="/Users/spurge/Desktop/WMS_project/build/package_info_plus/.transforms/83b51ad72429f641966d2329d30df3e3/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -43,10 +43,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/spurge/Desktop/WMS APP/wms_app/android@@:mobile_scanner::release"
-      jars="/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/.transforms/d7bcdb36313efa3123dfa2afacbe3d92/transformed/out/jars/classes.jar"
+      name="/Users/spurge/Desktop/WMS_project/android@@:mobile_scanner::release"
+      jars="/Users/spurge/Desktop/WMS_project/build/mobile_scanner/.transforms/a38acd6313a55ec491584a94f1f1feb1/transformed/out/jars/classes.jar"
       resolved="dev.steenbakker.mobile_scanner:mobile_scanner:unspecified"
-      folder="/Users/spurge/Desktop/WMS APP/wms_app/build/mobile_scanner/.transforms/d7bcdb36313efa3123dfa2afacbe3d92/transformed/out"
+      folder="/Users/spurge/Desktop/WMS_project/build/mobile_scanner/.transforms/a38acd6313a55ec491584a94f1f1feb1/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

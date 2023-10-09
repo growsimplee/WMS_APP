@@ -52,7 +52,8 @@ class _PicklISTState extends State<PicklIST> {
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
-            Provider.of<PicklistProvider>(context, listen: false).onRefereh();
+            // Provider.of<PicklistProvider>(context, listen: false).onRefereh();
+            Provider.of<PicklistProvider>(context, listen: false).getActivePicklist(1);
           },
           icon: const Icon(
             Icons.arrow_back_ios,
